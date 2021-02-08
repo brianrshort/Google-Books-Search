@@ -1,0 +1,11 @@
+node_modules/
+package-lock.json
+client/node_modules/
+client/package-lock.json
+client/.gitignore
+client/src/App.css
+client/src/App.test.js
+client/src/index.css
+client/src/logo.svg
+client/src/reportWebVitals.js
+client/src/setupTests.js
