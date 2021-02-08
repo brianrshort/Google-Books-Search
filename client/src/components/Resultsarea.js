@@ -1,9 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { SaveButton } from "./SaveButton";
 
 export function Resultsarea(props) {
     const bookArr = props.books;
+    const arrMap = (obj) => {
+        obj.volumeInfo.authors.map(auth => {
+            return (
+            <span>
+                <span>{auth}</span><span> // </span>
+                </span>
+        )
+    })
+    }
+
     return (
         <div>
         {bookArr.map(book => {
@@ -14,13 +24,14 @@ export function Resultsarea(props) {
             <a href={book.selfLink}>
             <h4>{book.volumeInfo.title}</h4>
             </a>
-            <span>Authors -- </span>
-            {book.volumeInfo.authors.map(auth => {
-                return (
+            { !book.volumeInfo.authors ? <hr /> :
+                (            
                 <span>
-                    <span>{auth}</span><span> // </span>
-                    </span>
-            )})}
+                    <span>Authors -- </span>
+                    {arrMap(book)}
+                </span>
+                ) 
+            }
             <p>{book.volumeInfo.description}</p>
             <SaveButton book={book} /> 
             </div>
