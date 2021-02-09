@@ -6,9 +6,9 @@ export function Saved() {
 
     useEffect(() => {
         axios.get("/api/books").then(res => {
-            console.log(res.data);
+            //console.log(res.data);
             setDisplay(res.data);
-            console.log(display);
+            //console.log(display);
             //console.log(res.data.items);
         }).catch(err => {
             console.log(err)

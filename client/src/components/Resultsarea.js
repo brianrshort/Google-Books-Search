@@ -5,15 +5,6 @@ import { AuthorMap } from "./AuthorMap";
 
 export function Resultsarea(props) {
     const bookArr = props.books;
-    const arrMap = (obj) => {
-        obj.volumeInfo.authors.map(auth => {
-            return (
-            <span>
-                <span>{auth}</span><span> // </span>
-                </span>
-        )
-    })
-    }
 
     return (
         <div>
@@ -39,4 +30,3 @@ export function Resultsarea(props) {
     )
 }
 
-//Title authors image description link
